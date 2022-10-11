@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import QuizDetails from '../QuizDetails/QuizDetails';
-
+import { toast } from "react-toastify";
 const Quiz = () => {
     const allData=useLoaderData().data
     const{name,questions}=allData;
     //  console.log(questions);
-
+     
     const [answer, setAnswer] = useState([]);
+
+    /* const [answer, setAnswer] = useState([]);
     const right = () =>
       toast.success("Your answer is correct", {
         position: "top-right",
@@ -29,18 +31,19 @@ const Quiz = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-      });
+      }); */
 
-
-    const handleAnswer = (option, correctAns) => {
-        if (option === correctAns) {
-          right();
-          if (!answer.includes(correctAns)) {
-            let rightAnsArr = [...answer, correctAns];
-            setAnswer(rightAnsArr);
+   
+    const handleAnswer = (option, correctAnswer) => {
+        
+        if (option === correctAnswer) {
+         toast.success('your answer is correct',{autoClose:500})
+          if (!answer.includes(correctAnswer)) {
+            let exactAnswer = [...answer, correctAnswer];
+            setAnswer(exactAnswer);
           }
         } else {
-          wrong();
+            toast.error("Your answer is wrong ",{autoClose:500} )
         }
       };
 
