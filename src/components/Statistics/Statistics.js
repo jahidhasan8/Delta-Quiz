@@ -14,7 +14,6 @@ import {
 
 const Statistics = () => {
     const quizInfoData = useLoaderData().data;
-    console.log(quizInfoData);
     return (
         <div className="md:px-80  mt-16">
 

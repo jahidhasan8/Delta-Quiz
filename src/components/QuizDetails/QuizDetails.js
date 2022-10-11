@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const QuizDetails = ({ singleQuestion, handleAnswer }) => {
-    
+
     const { question, correctAnswer, options } = singleQuestion
 
 
@@ -12,7 +12,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
 
     const handleCorrectAnswer = (event, correctAnswer) => {
         setOpen((active) => !active);
-    
+
     };
 
     return (
@@ -20,8 +20,8 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
             <ToastContainer />
 
 
-            <div className='grid grid-cols-1 shadow-lg shadow-indigo-500 bg-slate-300 mix-blend-multiply bg-blend-lighten  md:w-3/5 mx-4 md:mx-auto mb-10 py-4'>
-                <div className='flex justify-center px-2 items-center py-6 mx-auto my-6 '>
+            <div className='contrast-125 hover:contrast-150 ring-2 ring-purple-500 ring-offset-4 ring-offset-purple-200 grid grid-cols-1 shadow-lg shadow-indigo-500 bg-slate-400  mix-blend-multiply bg-blend-lighten  md:w-3/5 mx-4 md:mx-auto mb-10 py-4 rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+                <div className='flex  px-2  py-6 mx-auto my-6 '>
                     <h4 className='text-xl  text-center px-4'> Test:  {question.replace(/(<([^>]+)>)/ig, '')} </h4>
 
                     <EyeIcon onClick={handleCorrectAnswer} className={`md:h-6 md:w-6 h-10 w-10 text-slate-500 ${open ? "" : "hidden"}`} />
@@ -44,7 +44,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
             </div>
 
 
-            <div className="alert alert-info shadow-lg md:w-2/5 flex justify-center  md:mx-auto" style={{display:open ? 'none':'block'}}>
+            <div className="alert alert-info shadow-lg md:w-2/5 flex justify-center  md:mx-auto" style={{ display: open ? 'none' : 'block' }}>
                 <div className={open ? "hidden" : ""} >
                     <span > {correctAnswer}</span>
                 </div>
