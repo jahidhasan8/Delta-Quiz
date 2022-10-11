@@ -10,7 +10,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
 
     const [open, setOpen] = useState(true);
 
-    const handleCorrectAnswer = (event, correctAnswer) => {
+    const handleCorrectAnswer = () => {
         setOpen((active) => !active);
 
     };
@@ -44,7 +44,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
             </div>
 
 
-            <div className="alert alert-info shadow-lg md:w-2/5 flex justify-center  md:mx-auto" style={{ display: open ? 'none' : 'block' }}>
+            <div className="alert alert-info shadow-lg md:w-2/5 md:mx-auto mb-6" style={{ display: open ? 'none' : 'block' }}>
                 <div className={open ? "hidden" : ""} >
                     <span > {correctAnswer}</span>
                 </div>
