@@ -27,7 +27,7 @@ const Home = () => {
                                 <h2 className="card-title">{topic.name}</h2>
                                 <p>Questions : {topic.total}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/quiz/${topic.id}`}><button className="btn btn-md bg-slate-500">Start Quiz<ArrowRightIcon className="text-white h-6 w-6 text-blue-500"/></button></Link>
+                                    <Link to={`/quiz/${topic.id}`}><button className="btn btn-md bg-slate-500">Start Quiz<ArrowRightIcon className="text-white h-6 w-6"/></button></Link>
                                 </div>
                             </div>
                         </div>
