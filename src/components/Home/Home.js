@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const quizTopics = useLoaderData().data
-    console.log(quizTopics);
+    // console.log(quizTopics);
     return (
 
         <div>
@@ -20,13 +20,13 @@ const Home = () => {
             <div className='grid md:grid-cols-4  gap-4 px-4 py-10'>
                 {
                     quizTopics.map(topic =>
-                        <div className="card card-compact  bg-slate-400 shadow-xl">
+                        <div className="card card-compact  bg-slate-400 shadow-xl" key={topic.id}>
                             <figure><img className='w-full h-56' src={topic.logo} alt="" /></figure>
                             <div className="card-body ">
                                 <h2 className="card-title">{topic.name}</h2>
                                 <p>Questions : {topic.total}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-md bg-slate-500">Start Quiz</button>
+                                    <Link to={`/quiz/${topic.id}`}><button className="btn btn-md bg-slate-500">Start Quiz</button></Link>
                                 </div>
                             </div>
                         </div>
