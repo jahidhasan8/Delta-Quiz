@@ -46,7 +46,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
 
             <div className="alert alert-info shadow-lg md:w-2/5 md:mx-auto mb-6" style={{ display: open ? 'none' : 'block' }}>
                 <div className={open ? "hidden" : ""} >
-                    <span > {correctAnswer}</span>
+                    <span className='mx-auto' > {correctAnswer}</span>
                 </div>
             </div>
 

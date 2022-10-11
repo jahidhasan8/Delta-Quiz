@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const Home = () => {
     const quizTopics = useLoaderData().data
-    // console.log(quizTopics);
+    
     return (
 
         <div>
