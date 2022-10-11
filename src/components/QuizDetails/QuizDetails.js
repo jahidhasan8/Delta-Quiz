@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const QuizDetails = ({ singleQuestion, handleAnswer }) => {
-    // console.log(question);
+    
     const { question, correctAnswer, options } = singleQuestion
-    // console.log(singleQuestion);
+
 
     const [open, setOpen] = useState(true);
 
-    const handleCorrectAnswer = (event,correctAnswer) => {
+    const handleCorrectAnswer = (event, correctAnswer) => {
         setOpen((active) => !active);
-        // toast.info(correctAnswer)
+    
     };
 
     return (
         <div className=''>
             <ToastContainer />
-        
+
 
             <div className='grid grid-cols-1 shadow-lg shadow-indigo-500 bg-slate-300 mix-blend-multiply bg-blend-lighten  md:w-3/5 mx-4 md:mx-auto mb-10 py-4'>
                 <div className='flex justify-center px-2 items-center py-6 mx-auto my-6 '>
@@ -34,7 +34,7 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
 
                             className=" border-solid border-2 border-slate-500 p-3    rounded-md  "
                         >
-                            <input onClick={() => handleAnswer(option, correctAnswer)} className='mx-2 cursor-pointer' type="radio" name="" id="" />
+                            <input onClick={() => handleAnswer(option, correctAnswer)} className='mx-2 cursor-pointer' type="radio" name="answer" id="" />
                             {option}
 
                         </div>
@@ -42,14 +42,14 @@ const QuizDetails = ({ singleQuestion, handleAnswer }) => {
                     }
                 </div>
             </div>
-              
-            
-            <div className="alert alert-info shadow-lg md:w-2/5 flex justify-center  md:mx-auto">
-                <div  className={open ? "hidden" : ""} >
-                    <span> {correctAnswer}</span>
+
+
+            <div className="alert alert-info shadow-lg md:w-2/5 flex justify-center  md:mx-auto" style={{display:open ? 'none':'block'}}>
+                <div className={open ? "hidden" : ""} >
+                    <span > {correctAnswer}</span>
                 </div>
             </div>
-            
+
         </div>
     );
 };

@@ -5,34 +5,9 @@ import { toast } from "react-toastify";
 const Quiz = () => {
     const allData=useLoaderData().data
     const{name,questions}=allData;
-    //  console.log(questions);
+
      
     const [answer, setAnswer] = useState([]);
-
-    /* const [answer, setAnswer] = useState([]);
-    const right = () =>
-      toast.success("Your answer is correct", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    const wrong = () =>
-      toast.error("Your answer is wrong 😞", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      }); */
-
    
     const handleAnswer = (option, correctAnswer) => {
         
@@ -51,8 +26,7 @@ const Quiz = () => {
         <div>
             <h1 className='text-center font-bold text-2xl mt-6'>Quiz Of {name}</h1>
             <div className='flex-1 text-center px-2 mt-12 gap-10'>
-            {/* lg:grid-cols-2  gap-5 */}
-            {/* grid grid-cols-1 */}
+          
             {
                 questions.map(singleQuestion=><QuizDetails 
                     singleQuestion={singleQuestion} 
