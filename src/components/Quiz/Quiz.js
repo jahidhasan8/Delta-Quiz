@@ -47,7 +47,7 @@ const Quiz = () => {
     return (
         <div>
             <h1 className='text-center font-bold text-2xl mt-6'>Quiz Of {name}</h1>
-            <div className='flex-1 text-center px-6 mt-12 gap-10'>
+            <div className='flex-1 text-center px-2 mt-12 gap-10'>
             {/* lg:grid-cols-2  gap-5 */}
             {/* grid grid-cols-1 */}
             {

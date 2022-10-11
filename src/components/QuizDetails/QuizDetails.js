@@ -14,23 +14,29 @@ const QuizDetails = ({ singleQuestion }) => {
 
     return (
         <div className=''>
-            {/* flex  justify-between  */}
-            <div className='flex justify-center items-center py-12 mx-auto my-10 shadow-lg shadow-slate-600	w-3/5 '>
-                <h4 className='text-xl px-12'> Test:  {question.replace(/(<([^>]+)>)/ig, '')} </h4>
+        
+            <div className='grid grid-cols-1 shadow-lg shadow-indigo-500 bg-slate-300 mix-blend-multiply bg-blend-lighten  md:w-3/5 mx-4 md:mx-auto mb-10 py-4'>
+            <div className='flex justify-center px-2 items-center py-6 mx-auto my-6 '>
+                <h4 className='text-xl  text-center px-4'> Test:  {question.replace(/(<([^>]+)>)/ig, '')} </h4>
 
-                <EyeIcon onClick={handleCorrectAnswer} className={`h-6 w-6 text-slate-500 ${open ? "" : "hidden"}`} />
-                <EyeSlashIcon onClick={handleCorrectAnswer} className={`h-6 w-6 text-slate-500 ${open ? "hidden" : ""}`} />
+                <EyeIcon onClick={handleCorrectAnswer} className={`md:h-6 md:w-6 h-10 w-10 text-slate-500 ${open ? "" : "hidden"}`} />
+                <EyeSlashIcon onClick={handleCorrectAnswer} className={`md:h-6 md:w-6 h-10 w-10 text-slate-500 ${open ? "hidden" : ""}`} />
             </div>
 
-          {/*   {
-                options.map((option, index) => <div key={index}
+            <div className='grid md:grid-cols-2 md:w-3/5 gap-5 justify-center mx-auto'>
+                {
+                    options.map((option, index) => <div key={index}
 
-                    className="cursor-pointer border-solid border-2 border-blue-600  p-3 rounded"
-                >
-                    {option}
-                </div>
-                )
-            } */}
+                        className="cursor-pointer border-solid border-2 border-slate-500 p-3    rounded-md  "
+                    >
+
+                        {option}
+
+                    </div>
+                    )
+                }
+            </div>
+            </div>
 
 
         </div>
