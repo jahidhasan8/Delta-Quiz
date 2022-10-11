@@ -1,34 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 const NavBar = () => {
-    const [open, setOpen]=useState(false)
+    const [open, setOpen] = useState(false)
     return (
-        <nav className='bg-slate-500 text-white w-full '>
-           
+        <nav className='bg-indigo-300 text-white w-full '>
+
             <div className='flex justify-between mr-12 p-2'>
-            <Link className='mx-auto text-white text-2xl' to='/'><h3 >Delta Quiz</h3></Link>
+                <NavLink className={`mx-auto text-black font-bold text-2xl`} to='/'><h3 >Delta Quiz</h3></NavLink>
 
-            <div onClick={()=>setOpen(!open)} className="h-6 w-6 md:hidden">
-            {
-                open ?  <XMarkIcon /> :
-                <Bars3Icon />
-            }
-            </div>
-           
+                <div onClick={() => setOpen(!open)} className="h-10 w-10 text-black md:hidden">
+                    {
+                        open ? <XMarkIcon /> :
+                            <Bars3Icon />
+                    }
+                </div>
 
-                <ul className={`md:flex md:static relative bg-slate-500  ${open ? 'top-6px' : 'top-[-140px]'}`}>
+
+                <ul className={`md:flex md:static relative text-black font-semibold bg-indigo-300   ${open ? 'top-6px' : 'top-[-140px]'}`}>
+
+               
                     <li className='mr-10'>
-                        <Link to='/home'>Home</Link>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? 'bg-indigo-400 rounded-sm' : undefined
+                        } to='/home'>Home</NavLink>
                     </li>
-                    
+
                     <li className='mr-10'>
-                        <Link to='/statistics'>Statistics</Link>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? 'bg-indigo-400 rounded-sm' : undefined
+                        } to='/statistics'>Statistics</NavLink>
 
                     </li>
                     <li className='mr-10'>
-                        <Link to='/blog'>Blog</Link>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? 'bg-indigo-400 rounded-sm' : undefined
+                        } to='/blog'>Blog</NavLink>
 
                     </li>
                 </ul>
