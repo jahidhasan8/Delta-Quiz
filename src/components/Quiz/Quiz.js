@@ -26,7 +26,7 @@ const Quiz = () => {
   return (
     <div>
       <h1 className='text-center font-bold text-2xl mt-6'>Quiz Of {name}</h1>
-      <h2 className="font-bold text-center bg-gradient-to-r from-indigo-300 via-purple-500 to-pink-300 mt-6 p-3 text-white rounded w-2/5 mx-auto">
+      <h2 className="font-bold text-center bg-indigo-300 p-3 text-white rounded w-2/5 mx-auto">
         Your Score is : {answer.length}
       </h2>
       <div className='flex-1 text-center px-2 mt-12 gap-10'>
