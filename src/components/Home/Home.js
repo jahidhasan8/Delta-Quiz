@@ -4,10 +4,10 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const Home = () => {
     const quizTopics = useLoaderData().data
-    
+
     return (
 
-        <div className='bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-300'>
+        <div className=''>
             <div className='md:flex justify-center items-center gap-8'>
                 <div className='px-3'>
                     <h1 className='text-4xl font-bold'>Welcome To Delta Quiz </h1>
@@ -27,7 +27,7 @@ const Home = () => {
                                 <h2 className="card-title">{topic.name}</h2>
                                 <p className='text-xl'>Questions : {topic.total}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/quiz/${topic.id}`}><button className="btn btn-md bg-slate-500">Start Quiz<ArrowRightIcon className="text-white h-6 w-6"/></button></Link>
+                                    <Link to={`/quiz/${topic.id}`}><button className="btn btn-md bg-slate-500">Start Quiz<ArrowRightIcon className="text-white h-6 w-6" /></button></Link>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 const NavBar = () => {
@@ -20,7 +20,7 @@ const NavBar = () => {
 
                 <ul className={`md:flex md:static relative text-black font-semibold bg-indigo-300   ${open ? 'top-6px' : 'top-[-140px]'}`}>
 
-               
+
                     <li className='mr-10'>
                         <NavLink className={({ isActive }) =>
                             isActive ? 'bg-indigo-400 rounded-sm' : undefined
